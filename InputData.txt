@@ -1,0 +1,6 @@
+p,vaibhav,21,vaibhav@gmail.com
+p,Kritik,23,kritik@gmail.com
+p,Amit,20,amit@gmail.com
+o,metacube,metacube@metacube.com
+o,google,google@gmail.com
+o,microsoft,microsoft@hotmail.com
