@@ -6,8 +6,13 @@ import java.util.ArrayList;
 
 public class FileOperation {
 
+	
+	/**
+	 * Accepts file path and name and read data for entities
+	 * @param fileName 
+	 * @return ArrayList<Entitiy>
+	 */
 	public ArrayList<Entity> readDataFromFile(String fileName){
-
 		ArrayList<Entity> entityArrayList = new ArrayList<Entity>();
 		try {
 			FileInputStream fileInputStream = new FileInputStream(fileName);
@@ -16,6 +21,7 @@ public class FileOperation {
 			while( (strLine = bufferedReader.readLine() ) != null) {
 				String[] entityDataArray = strLine.split(",");
 				char tmp = entityDataArray[0].charAt(0);
+				//check type of entity
 				switch(tmp)
 				{
 					case 'p' :
@@ -43,6 +49,11 @@ public class FileOperation {
 	}
 	
 	
+	/**
+	 * Accepts file path and name and read data for relations b/w entities
+	 * @param fileName
+	 * @return ArrayList<String>
+	 */
 	public ArrayList<String> readRelationsFromFile(String fileName){
 
 		ArrayList<String> stringArrayList = new ArrayList<String>();

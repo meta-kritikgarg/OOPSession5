@@ -6,11 +6,13 @@ public abstract class Entity {
 	private int type;
 	private String email;
 
-	private String printableString;
+	public String printableString;
 	
 	int ORGANIZATION = 2;
 	int PERSON = 1;
 	
+	
+	//getter & setter for name
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -19,6 +21,8 @@ public abstract class Entity {
 		return name;
 	}
 	
+	
+	//getter & setter for type
 	public int getType() {
 		return type;
 	}
@@ -27,6 +31,8 @@ public abstract class Entity {
 		this.type = type;
 	}
 	
+	
+	//getter & setter for email
 	public String getEmail() {
 		return email;
 	}
@@ -35,8 +41,10 @@ public abstract class Entity {
 		this.email = email;
 	}
 	
-	public void setPrintableString(String printableString) {
-		this.printableString = printableString;
+
+	//getter for printableString
+	public String getPrintableString() {
+		return printableString;
 	}
 
 }

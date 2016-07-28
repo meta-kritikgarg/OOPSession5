@@ -16,8 +16,15 @@ public class Node {
     
     
     /**
-     * This method adds an Connection to the Node of this graph iff
-     * the connection is not already present. 
+     * @return related entity
+     */
+    public Entity getEntity() {
+		return entity;
+	}
+    
+    
+    /**
+     * This method adds an Connection to the Node of this graph iff the connection is not already present. 
      * @param connection The connection to add
      */
     public void addNeighbor(Connection connection){
@@ -47,7 +54,6 @@ public class Node {
     
     
     /**
-     * 
      * @param index The index of the Connection to remove from this.neighborConnections
      * @return Connection The removed Connection
      */
@@ -55,8 +61,8 @@ public class Node {
         return this.neighborConnections.remove(index);
     }
     
+    
     /**
-     * 
      * @param e The Connection to remove from this.neighborConnections
      */
     public void removeNeighbor(Connection e){
@@ -65,7 +71,6 @@ public class Node {
     
     
     /**
-     * 
      * @return int The number of neighbors of this Node
      */
     public int getNeighborCount(){
@@ -74,7 +79,6 @@ public class Node {
     
     
     /**
-     * 
      * @return String The label of this Node
      */
     public String getName(){
@@ -89,16 +93,16 @@ public class Node {
         return "Node " + getName();
     }
     
+    
     /**
-     * 
      * @return The hash code of this Node's entity
      */
     public int hashCode(){
         return this.entity.hashCode();
     }
     
+    
     /**
-     * 
      * @param other The object to compare
      * @return true iff other instance of Node and the two Node objects have the same entity
      */
@@ -111,9 +115,9 @@ public class Node {
         return this.entity.equals(tmp.entity);
     }
     
+    
     /**
      * @return ArrayList<Connection> A copy of this.neighborConnections. Modifying the returned
-     * ArrayList will not affect the neighborConnections of this Node
      */
     public ArrayList<Connection> getAllConnections(){
         return new ArrayList<Connection>(this.neighborConnections);

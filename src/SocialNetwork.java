@@ -14,15 +14,16 @@ public class SocialNetwork {
 		ArrayList<Entity> data1 = new ArrayList<Entity>();
 		data1 = fileRW.readDataFromFile("InputData.txt");
 		
+		//Add all the entities to graph
 		for (Entity entity : data1) {
 			Node node = new Node(entity);
 			socialNetworkGraph.addNode(node, false);
 		}
 		
 		ArrayList<String> data2 = fileRW.readRelationsFromFile("InputRelations.txt");
-		
+		//Generate all the relations in graph
 		for (String string : data2) {
-			System.out.println(string);
+			//System.out.println(string);
 			String[] splitData = string.split(",");
 			Node tmp =socialNetworkGraph.getNode(splitData[0]);
 			for (int i = 1; i < splitData.length; i++) {
@@ -32,14 +33,30 @@ public class SocialNetwork {
 		
 		Set<String> f = socialNetworkGraph.nodeKeys();
 		
+		//Show Complete social network
+		System.out.println("Total Entities = "+f.size());
 		for (String string : f) {
 			System.out.println(string);
 			Node node = socialNetworkGraph.getNode(string);
+			System.out.println("Total connections = "+node.getNeighborCount());
 			ArrayList<Connection> connectionList = node.getAllConnections();
 			for (Connection connection : connectionList) {
 				System.out.println(connection.toString());
 			}
+			System.out.println();
 		}
+		
+		//Find a entity and print summary -- case sensitive
+		String tmpString = mySocialNetwork.getStringfromUser("Name of Entity to search & print summary");
+		Node found = socialNetworkGraph.getNode(tmpString);
+		if(found!=null) {
+				System.out.println("Total connections = "+found.getNeighborCount());
+				System.out.println(found.getEntity().getPrintableString());
+				}
+		else {
+			System.out.println("Not found");
+		}
+		
 		
 		
 		

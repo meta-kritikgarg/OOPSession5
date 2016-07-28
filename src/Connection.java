@@ -3,6 +3,7 @@ public class Connection {
 	private Node one, two;
     
     /**
+     * Constructor
      * @param one The first node in the Connection
      * @param two The second node in the Connection
      */
@@ -13,6 +14,7 @@ public class Connection {
     
     
     /**
+     * To get other node of this connection
      * @param current
      * @return The neighbor of current along this Connection
      */
@@ -57,7 +59,6 @@ public class Connection {
     
     
     /**
-     * 
      * @param other The Object to compare against this
      * @return ture iff other is an Connection with the same Vertices as this
      */
